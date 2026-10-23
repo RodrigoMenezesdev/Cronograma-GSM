@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plano de Estudos - Guarda Municipal SG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Plano de Estudos - GCMSG</h1>
+      <p>Meta Diária: 5 Horas | Foco Total no Edital</p>
+    </header>
+
+    <!-- Painel de Progreso -->
+    <div class="dashboard">
+      <div class="stat-card">
+        <h3>Progresso Semanal</h3>
+        <div class="value" id="progress-percent">0%</div>
+      </div>
+      <div class="stat-card">
+        <h3>Blocos Concluídos</h3>
+        <div class="value" id="completed-count">0 / 12</div>
+      </div>
+      <div class="stat-card action-card">
+        <button class="reset-progress-btn" onclick="resetAllProgress()">Zerar Progresso</button>
+      </div>
+    </div>
+
+    <!-- Timer Pomodoro -->
+    <div class="timer-section">
+      <h3>Cronómetro de Estudo (Pomodoro)</h3>
+      <div class="timer-display" id="timer">25:00</div>
+      <div class="timer-controls">
+        <button onclick="startTimer()">Iniciar</button>
+        <button onclick="pauseTimer()">Pausar</button>
+        <button class="reset" onclick="resetTimer()">Reiniciar</button>
+        <button onclick="setTimer(50)">50 min</button>
+        <button onclick="setTimer(25)">25 min</button>
+        <button onclick="setTimer(10)">10 min Pausa</button>
+      </div>
+    </div>
+
+    <!-- Navegação pelos Dias -->
+    <div class="nav-days" id="days-nav"></div>
+
+    <!-- Exibição do Cronograma -->
+    <div id="schedule-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

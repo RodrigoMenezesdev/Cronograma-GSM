@@ -1,0 +1,253 @@
+:root {
+  --bg-color: #f8fafc;        /* Fundo branco/suave */
+  --card-bg: #ffffff;        /* Cartões brancos */
+  --accent-color: #0284c7;    /* Azul para destaques e botões */
+  --accent-hover: #0369a1;    /* Azul mais escuro no hover */
+  --text-main: #0f172a;       /* Texto escuro/preto para fácil leitura */
+  --text-muted: #64748b;      /* Texto secundário acinzentado */
+  --success: #16a34a;         /* Verde para blocos concluídos */
+  --border-color: #e2e8f0;    /* Bordas suaves */
+  --danger: #dc2626;          /* Vermelho para botões de zerar/reset */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Painel de Progresso */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.stat-card.action-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card h3 {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card .value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.reset-progress-btn {
+  background: rgba(220, 38, 38, 0.08);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.reset-progress-btn:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* Timer Pomodoro */
+.timer-section {
+  background: var(--card-bg);
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.timer-section h3 {
+  color: var(--text-main);
+}
+
+.timer-display {
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0.5rem 0;
+  color: var(--accent-color);
+}
+
+.timer-controls button {
+  background: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0.2rem;
+  transition: background 0.2s;
+}
+
+.timer-controls button:hover {
+  background: var(--accent-hover);
+}
+
+.timer-controls button.reset {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* Navegação pelos Dias */
+.nav-days {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.day-btn {
+  background: var(--card-bg);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.day-btn.active, .day-btn:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+
+/* Cartões do Cronograma */
+.schedule-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.schedule-card h2 {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.block {
+  background: #f1f5f9;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  transition: all 0.2s;
+}
+
+.block.completed {
+  border-color: var(--success);
+  background: #f0fdf4;
+}
+
+.block-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.block-header input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--success);
+  cursor: pointer;
+}
+
+.time-badge {
+  background: #e2e8f0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.block-title {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.block-details {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-left: 2rem;
+}
+
+@media (max-width: 600px) {
+  .timer-display {
+    font-size: 2.2rem;
+  }
+  .block-header {
+    flex-wrap: wrap;
+  }
+}
